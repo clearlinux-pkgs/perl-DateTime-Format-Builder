@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Format-Builder
 Version  : 0.81
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.81.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.81.tar.gz
 Summary  : 'Create DateTime parser classes and objects.'
@@ -15,19 +15,25 @@ BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
 BuildRequires : perl(Class::Data::Inheritable)
 BuildRequires : perl(Class::Factory::Util)
+BuildRequires : perl(Class::Inspector)
 BuildRequires : perl(Class::Singleton)
 BuildRequires : perl(DateTime)
 BuildRequires : perl(DateTime::Format::Strptime)
 BuildRequires : perl(DateTime::Locale)
 BuildRequires : perl(DateTime::TimeZone)
+BuildRequires : perl(Devel::StackTrace)
+BuildRequires : perl(Eval::Closure)
 BuildRequires : perl(Exception::Class)
 BuildRequires : perl(File::ShareDir)
+BuildRequires : perl(MRO::Compat)
 BuildRequires : perl(Module::Implementation)
 BuildRequires : perl(Module::Runtime)
 BuildRequires : perl(Package::DeprecationManager)
 BuildRequires : perl(Package::Stash)
+BuildRequires : perl(Params::Util)
 BuildRequires : perl(Params::Validate)
 BuildRequires : perl(Params::ValidationCompiler)
+BuildRequires : perl(Role::Tiny)
 BuildRequires : perl(Specio::Exporter)
 BuildRequires : perl(Sub::Exporter::Progressive)
 BuildRequires : perl(Sub::Identify)
