@@ -4,15 +4,18 @@
 #
 Name     : perl-DateTime-Format-Builder
 Version  : 0.82
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.82.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.82.tar.gz
-Summary  : Create DateTime parser classes and objects
+Summary  : 'Create DateTime parser classes and objects.'
 Group    : Development/Tools
 License  : Artistic-2.0
+Requires: perl-DateTime-Format-Builder-license = %{version}-%{release}
+Requires: perl-DateTime-Format-Builder-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
 BuildRequires : perl(Class::Data::Inheritable)
+BuildRequires : perl(Class::Factory::Util)
 BuildRequires : perl(Class::Inspector)
 BuildRequires : perl(Class::Singleton)
 BuildRequires : perl(DateTime)
@@ -26,13 +29,17 @@ BuildRequires : perl(File::ShareDir)
 BuildRequires : perl(MRO::Compat)
 BuildRequires : perl(Module::Implementation)
 BuildRequires : perl(Module::Runtime)
+BuildRequires : perl(Package::DeprecationManager)
 BuildRequires : perl(Package::Stash)
+BuildRequires : perl(Params::Util)
 BuildRequires : perl(Params::Validate)
 BuildRequires : perl(Params::ValidationCompiler)
 BuildRequires : perl(Role::Tiny)
 BuildRequires : perl(Specio::Exporter)
 BuildRequires : perl(Sub::Exporter::Progressive)
 BuildRequires : perl(Sub::Identify)
+BuildRequires : perl(Sub::Install)
+BuildRequires : perl(Sub::Name)
 BuildRequires : perl(Try::Tiny)
 BuildRequires : perl(Variable::Magic)
 BuildRequires : perl(namespace::autoclean)
@@ -53,14 +60,32 @@ Requires: perl-DateTime-Format-Builder = %{version}-%{release}
 dev components for the perl-DateTime-Format-Builder package.
 
 
+%package license
+Summary: license components for the perl-DateTime-Format-Builder package.
+Group: Default
+
+%description license
+license components for the perl-DateTime-Format-Builder package.
+
+
+%package perl
+Summary: perl components for the perl-DateTime-Format-Builder package.
+Group: Default
+Requires: perl-DateTime-Format-Builder = %{version}-%{release}
+
+%description perl
+perl components for the perl-DateTime-Format-Builder package.
+
+
 %prep
 %setup -q -n DateTime-Format-Builder-0.82
+cd %{_builddir}/DateTime-Format-Builder-0.82
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -70,7 +95,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -78,6 +103,8 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-DateTime-Format-Builder
+cp %{_builddir}/DateTime-Format-Builder-0.82/LICENSE %{buildroot}/usr/share/package-licenses/perl-DateTime-Format-Builder/1f066dac1dafd327decd1154aa47f3a92d5d5ab4
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -90,14 +117,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser/Quick.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser/Regex.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser/Strptime.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Parser/generic.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/Builder/Tutorial.pod
 
 %files dev
 %defattr(-,root,root,-)
@@ -109,3 +128,18 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/DateTime::Format::Builder::Parser::Strptime.3
 /usr/share/man/man3/DateTime::Format::Builder::Parser::generic.3
 /usr/share/man/man3/DateTime::Format::Builder::Tutorial.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-DateTime-Format-Builder/1f066dac1dafd327decd1154aa47f3a92d5d5ab4
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser/Quick.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser/Regex.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser/Strptime.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Parser/generic.pm
+/usr/lib/perl5/vendor_perl/5.30.1/DateTime/Format/Builder/Tutorial.pod
