@@ -107,11 +107,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser/Quick.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser/Regex.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser/Strptime.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Parser/generic.pm
-/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/Builder/Tutorial.pod
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Quick.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Regex.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Strptime.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/generic.pm
+/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Tutorial.pod
