@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Format-Builder
 Version  : 0.83
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
 Summary  : 'Create DateTime parser classes and objects.'
@@ -16,6 +16,7 @@ BuildRequires : buildreq-cpan
 BuildRequires : perl(DateTime)
 BuildRequires : perl(DateTime::Format::Strptime)
 BuildRequires : perl(Params::Validate)
+BuildRequires : perl(namespace::autoclean)
 
 %description
 # NAME

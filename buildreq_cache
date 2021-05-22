@@ -2,3 +2,4 @@
 perl(DateTime)
 perl(DateTime::Format::Strptime)
 perl(Params::Validate)
+perl(namespace::autoclean)
