@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Format-Builder
 Version  : 0.83
-Release  : 26
+Release  : 27
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
 Summary  : 'Create DateTime parser classes and objects.'
@@ -108,11 +108,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Quick.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Regex.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/Strptime.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Parser/generic.pm
-/usr/lib/perl5/vendor_perl/5.34.0/DateTime/Format/Builder/Tutorial.pod
+/usr/lib/perl5/*
