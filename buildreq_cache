@@ -1,5 +1,6 @@
-0.83
+0.7901
+perl(Class::Factory::Util)
 perl(DateTime)
 perl(DateTime::Format::Strptime)
 perl(Params::Validate)
-perl(namespace::autoclean)
+perl(Task::Weaken)
